@@ -19,9 +19,22 @@ Then you can use the following operators (note that you can combine them using p
 {{#if (or v1 v2)}} // v1 || v2
 {{#if (and v1 v2)}} // v1 && v2
 {{#if (not v)}} // !v
-{{choice index v1 v2 v3 v4 ...}} // [v1,v2,v3,v4,...][index]
-{{oneof v1 v2 v3 v4 ... empty1=e1 empty2=e2 ...}} // select the first not-empty value from v1 v2 v3 v4 ...
-                                                  // values passed as emptyN considered as empty also
+
+// some useful not-logical operations
+
+// [v1,v2,v3,v4,...][index]
+{{choice index v1 v2 v3 v4 ...}}
+
+// select the first not-empty value from v1 v2 v3 v4 ...
+// The values passed as emptyN considered as empty also
+// The value d is a default value passed if no any non-empty value found
+{{oneof v1 v2 v3 v4 ... empty1=e1 empty2=e2 ... dflt=d }}
+
+// date and time local formatters
+{{datetime_local dt}}
+{{date_local d}}
+{{time_local t}}
+
 ```
 
-You can use this project as you wish having your code open source.
+You can use this project as you wish till your code is open source.
