@@ -1,3 +1,5 @@
+// GPL v.3
+// Home page: https://github.com/nnseva/handlebarsjs-logic
 
 Handlebars.registerHelper('datetime_local', function(attr) {
     return new Handlebars.SafeString(
