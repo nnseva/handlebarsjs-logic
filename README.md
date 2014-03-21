@@ -7,6 +7,8 @@ It sometimes useful to have some logical and other operations instead of simple 
 
 You can use this project to have such possibilities. Just install the handlebars-logic.js somewhere in your static files, include it as a script after the handlebarsjs itself, and enjoy.
 
+If you are using date/time local formatters, you need to link and initialize the timezone-js project also http://github.com/mde/timezone-js
+
 Then you can use the following operators (note that you can combine them using parenthesis):
 
 ```
