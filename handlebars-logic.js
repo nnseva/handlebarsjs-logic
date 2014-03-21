@@ -8,14 +8,18 @@ Handlebars.registerHelper('datetime_local', function(attr) {
 });
 
 Handlebars.registerHelper('date_local', function(attr) {
+    var tzd = new timezoneJS.Date(attr,'Etc/UTC');
+    var d = new Date(tzd.year,tzd.month,tzd.date,0,0,0);
     return new Handlebars.SafeString(
-        new Date(attr+" 00:00").toLocaleDateString().replace(' ','&nbsp;')
+        d.toLocaleDateString().replace(' ','&nbsp;')
     );
 });
 
 Handlebars.registerHelper('time_local', function(attr) {
+    var tzd = new timezoneJS.Date("1980-01-01T"+attr+"Z",'Etc/UTC');
+    var d = new Date(1980,1,1, tzd.hours,tzd.minutes,tzd.seconds);
     return new Handlebars.SafeString(
-        new Date("1980-01-01 "+attr).toLocaleTimeString().replace(' ','&nbsp;')
+        d.toLocaleTimeString().replace(' ','&nbsp;')
     );
 });
 
